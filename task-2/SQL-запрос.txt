@@ -1,0 +1,1 @@
+SELECT `name` FROM authors, (SELECT subselect.author_id FROM (Select `author_id`, count(*) as Count from authors_books group by author_id) AS subselect WHERE subselect.Count<7) as ramble WHERE authors.authorID = ramble.author_id
